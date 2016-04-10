@@ -1,0 +1,12 @@
+from os.path import realpath, dirname
+from os import path
+
+DEBUG = False
+
+ASSETS_DEBUG = DEBUG
+TESTING = DEBUG == False
+
+SECRET_KEY = "<the super secret key comes here>"
+CSRF_ENABLED = True
+
+RUN_DIRECTORY = path.join(path.dirname(path.realpath(__file__)), 'run')

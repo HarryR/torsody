@@ -1,0 +1,14 @@
+# General Libs
+gevent
+requests
+passlib
+pytest
+stem
+
+# Web Framework - Flask, Beaker etc.
+Flask
+Flask-WTF
+Flask-Assets
+cssutils
+beaker
+python-memcached

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% assets filters="cssutils", output="frontend/_all_.css", "frontend/reset.css", "frontend/pocketgrid.css", "frontend/main.css" %}
+    	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+	{% endassets %}
+
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<div id="outer-container">
+		<header id="top-header">
+			<form id="top-form" method="POST" action="{{ url_for('.home') }}">
+				<input type="hidden" name="action" value="create" />
+				{{ createform.csrf_token }}
+				{{createform.username()}} 
+				<input class="submit" type="submit" value="New" />
+			</form>
+
+			{% if newaccount %}
+				<div id="top-account">
+					<strong class="warning">
+						Warning: username and password only shown once!
+					</strong><br />
+					XMPP&nbsp;<input type="text" value="{{newaccount.username}}@{{newaccount.hostname}}" readonly />&nbsp;&nbsp;
+					Pass&nbsp;<input type="text" value="{{newaccount.password}}" readonly /><br />
+				</div>
+			{% endif %}
+		</header>	
+
+		{% block body %}
+			<section id="content-container">
+				{% for name in hostnames %}
+					<form class="account" method="POST" action="{{ url_for('.home') }}">
+						<input type="hidden" name="action" value="delete" />
+						<input type="hidden" name="hostname" value="{{name}}" />
+						{{name}}&nbsp;<input type="submit" value="X" />
+					</form>
+				{% endfor %}
+			</section><!-- /#content-container -->
+			<div class="clear"></div>
+		{% endblock %}
+	</div>
+
+</body>
+</html>

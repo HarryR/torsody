@@ -1,0 +1,91 @@
+.clear, .clearfix {
+	clear: both;
+}
+
+.b50 {
+	width: 50%;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: #fafafa;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+
+
+/*
+ * Containers and general structure
+ */
+#inner-content {
+	padding: 20px;
+	}
+#outer-container {
+	background: #fff;
+	width: 660px;
+	margin: 0 auto;
+	}
+
+
+/* ------------------------------------------------------------- */
+
+
+/*
+ * Header
+ */
+#top-header {
+	height:  60px;
+	}
+	#top-header h1 {
+		font-size: 28px;
+		font-weight: bold;
+		padding: 10px;
+		float: left;
+		}
+		#top-header h1 a {
+			text-decoration: none;
+			color: #999;
+			}
+			#top-header h1 a:hover {
+				color: #888;
+				}
+
+	#top-form {
+		float: left;
+		margin-left: 15px;
+		margin-top: 15px;
+		}
+		#top-form input#username {
+			padding: 10px;
+		}
+		#top-form input.submit {
+			border-width: 1px;
+			padding: 9px;
+			font-size: 15px;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+	#top-account {
+		float: left; 
+		line-height: 1.4em;
+		margin-top: 15px;
+		margin-left: 20px;
+	}
+
+	form.account {
+		display: inline-block;
+		font-family: monospace;
+		padding: 15px;
+	}
+	form.account input[type=submit] {
+		background: #999;
+		border-width: 1px;
+		border-radius: 10px;
+		color: #ddd;
+	}
